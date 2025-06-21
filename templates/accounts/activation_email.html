@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Activate Your Account</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            color: #333;
+        }
+        .content {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        a {
+            color: #343a40;
+            font-weight: bold;
+            font-size: 18px;
+            text-decoration: none;
+        }
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>Hi {{ user.username }}!</h2>
+        <p>Thank you for registering. Please click the link below to activate your account:</p>
+        <p><a href="http://{{ domain }}{% url 'activate' uidb64=uid token=token %}">Activate Your Account</a></p>
+        <p>If you did not make this request, you can safely ignore this email.</p>
+    </div>
+</body>
+</html>
